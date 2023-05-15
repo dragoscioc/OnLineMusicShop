@@ -1,0 +1,5 @@
+1. Online music media shop management system;
+2. Java Desktop Application used for managing a music media shop
+3. One window for CRUD operations on users (first name, last name, email adress). View of all users, adding a new user, deleting an existing user, and updating an existing user
+4. One window for CRUD operations on music product(band name, album name, media support, music type). View all products, adding new product, deleting an existing product and updating an existing product.
+5. One window for CRUD operations on orders. View all orders, adding a new order, deleting an existing order and updating an existing order.
