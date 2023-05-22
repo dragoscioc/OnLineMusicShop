@@ -19,9 +19,13 @@ public class Order {
     private Date dateOfOrder;
     @Column(name = "total_amount")
     private Double totalAmount;
+    @ManyToOne
+    @JoinColumn(name="user_profile_id")
+    private UserProfile userProfile;
+
 
     @OneToMany(mappedBy = "order")
-    private List<ProductOrder> productOrder;
+    private List<ProductOrder> productOrders;
     public Order() {
     }
 
@@ -65,6 +69,21 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
+    public List<ProductOrder> getProductOrders() {
+        return productOrders;
+    }
+
+    public void setProductOrders(List<ProductOrder> productOrders) {
+        this.productOrders = productOrders;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
 
     @Override
     public String toString() {

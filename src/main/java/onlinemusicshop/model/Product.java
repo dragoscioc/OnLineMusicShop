@@ -11,24 +11,25 @@ public class Product {
     @Column(name = "id")
     private Integer id;
     @Column(name = "band_name")
-    private String band_name;
+    private String bandName;
     @Column(name = "album_name")
-    private String album_name;
+    private String albumName;
     @Column(name = "support_type")
-    private String support_type;
+    //TODO: create enum
+    private String supportType;
     @Column(name = "music_type")
-    private String music_type;
+    private String musicType;
     @Column(name = "price")
     private Double price;
 
     public Product() {
     }
 
-    public Product(String band_name, String album_name, String support_type, String music_type, Double price) {
-        this.band_name = band_name;
-        this.album_name = album_name;
-        this.support_type = support_type;
-        this.music_type = music_type;
+    public Product(String bandName, String albumName, String supportType, String musicType, Double price) {
+        this.bandName = bandName;
+        this.albumName = albumName;
+        this.supportType = supportType;
+        this.musicType = musicType;
         this.price = price;
     }
 
@@ -40,35 +41,36 @@ public class Product {
         this.id = id;
     }
 
-    public String getBand_name() {
-        return band_name;
+    public String getBandName() {
+        return bandName;
     }
 
-    public void setBand_name(String band_name) {
-        this.band_name = band_name;
+    public void setBandName(String bandName) {
+        this.bandName = bandName;
     }
 
-    public String getAlbum_name() {
-        return album_name;
+    public String getAlbumName() {
+        return albumName;
     }
 
-    public void setAlbum_name(String album_name) {
-        this.album_name = album_name;
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 
-    public String getSupport_type() {
-        return support_type;
+    public String getSupportType() {
+        return supportType;
     }
 
-    public void setSupport_type(String s) {
-        this.support_type = support_type;
-    }
-    public String getMusic_type() {
-        return music_type;
+    public void setSupportType(String supportType) {
+        this.supportType = supportType;
     }
 
-    public void setMusic_type(String music_type) {
-        this.music_type = music_type;
+    public String getMusicType() {
+        return musicType;
+    }
+
+    public void setMusicType(String musicType) {
+        this.musicType = musicType;
     }
 
     public Double getPrice() {
@@ -78,17 +80,8 @@ public class Product {
     public void setPrice(Double price) {
         this.price = price;
     }
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", band_name='" + band_name + '\'' +
-                ", album_name='" + album_name + '\'' +
-                ", support_type='" + support_type + '\'' +
-                ", music_type='" + music_type + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }
+
+
 
 
