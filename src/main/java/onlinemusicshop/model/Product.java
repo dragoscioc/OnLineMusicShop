@@ -21,16 +21,24 @@ public class Product {
     private String musicType;
     @Column(name = "price")
     private Double price;
+    @Column(name="promo_price")
+    private Double promoPrice;
+
+    @Column(name="main_image_url")
+    private String mainImageUrl;
 
     public Product() {
     }
 
-    public Product(String bandName, String albumName, String supportType, String musicType, Double price) {
+    public Product(Integer id, String bandName, String albumName, String supportType, String musicType, Double price, Double promoPrice, String mainImageUrl) {
+        this.id = id;
         this.bandName = bandName;
         this.albumName = albumName;
         this.supportType = supportType;
         this.musicType = musicType;
         this.price = price;
+        this.promoPrice = promoPrice;
+        this.mainImageUrl = mainImageUrl;
     }
 
     public Integer getId() {
@@ -79,6 +87,22 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Double getPromoPrice() {
+        return promoPrice;
+    }
+
+    public void setPromoPrice(Double promoPrice) {
+        this.promoPrice = promoPrice;
+    }
+
+    public String getMainImageUrl() {
+        return mainImageUrl;
+    }
+
+    public void setMainImageUrl(String mainImageUrl) {
+        this.mainImageUrl = mainImageUrl;
     }
 }
 

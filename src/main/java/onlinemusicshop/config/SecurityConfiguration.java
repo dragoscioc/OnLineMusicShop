@@ -25,7 +25,11 @@ public class SecurityConfiguration {
                         "/js/**",
                         "/vendor/**",
                         "/webjars/**",
-                        "/client-register/**"
+                        "/*/webjars/**",
+                        "/client-register/**",
+                        "/",
+                        "/index",
+                        "/home"
                 ).permitAll()
                 .requestMatchers("/admin-register")
                 .hasAnyAuthority("ADMIN")
