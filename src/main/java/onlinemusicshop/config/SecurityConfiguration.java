@@ -27,6 +27,8 @@ public class SecurityConfiguration {
                         "/webjars/**",
                         "/client-register/**"
                 ).permitAll()
+                .requestMatchers("/admin-register")
+                .hasAnyAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

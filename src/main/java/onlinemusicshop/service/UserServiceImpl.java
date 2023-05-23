@@ -1,4 +1,4 @@
-package onlinemusicshop.Service;
+package onlinemusicshop.service;
 
 import onlinemusicshop.model.User;
 import onlinemusicshop.model.enums.UserRole;
@@ -31,21 +31,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUser(String email, String Password, UserRole role) {
-
-    }
-
-    @Override
-    public void createUser(String email, String password, UserRole role, String name) {
+    public void createUser(String email, String password, UserRole role) {
         User user = new User(
-                name,
                 email,
                 passwordEncoder.encode(password),
                 role
         );
         userRepository.save(user);
     }
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<User> userOptional = userRepository.findByEmail(email);

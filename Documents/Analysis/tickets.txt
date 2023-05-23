@@ -6,7 +6,7 @@ OMS-4 Configure database connection and database scheme
 OMS-5 Create hibernate model
 OMS-6 Create dummy index page
 OMS-7 Configure spring security
-OMS-8 Add login page
+OMS-8 Add login/logout page
 OMS-9 Add client register page (public)
 OMS-10 Add admin register page (private only for admin role)
 OMS-11 Implement add product
