@@ -1,6 +1,7 @@
 package onlinemusicshop.model;
 
 import jakarta.persistence.*;
+import onlinemusicshop.model.enums.SupportType;
 
 @Entity
 @Table(name = "product")
@@ -15,8 +16,8 @@ public class Product {
     @Column(name = "album_name")
     private String albumName;
     @Column(name = "support_type")
-    //TODO: create enum
-    private String supportType;
+    @Enumerated(EnumType.STRING)
+    private SupportType supportType;
     @Column(name = "music_type")
     private String musicType;
     @Column(name = "price")
@@ -30,7 +31,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Integer id, String bandName, String albumName, String supportType, String musicType, Double price, Double promoPrice, String mainImageUrl) {
+    public Product(Integer id, String bandName, String albumName, SupportType supportType, String musicType, Double price, Double promoPrice, String mainImageUrl) {
         this.id = id;
         this.bandName = bandName;
         this.albumName = albumName;
@@ -65,11 +66,11 @@ public class Product {
         this.albumName = albumName;
     }
 
-    public String getSupportType() {
+    public SupportType getSupportType() {
         return supportType;
     }
 
-    public void setSupportType(String supportType) {
+    public void setSupportType(SupportType supportType) {
         this.supportType = supportType;
     }
 

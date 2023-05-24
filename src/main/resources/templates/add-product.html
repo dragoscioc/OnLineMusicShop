@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header-css"></head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<h3 align="center">Create new Product</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-3">
+
+            <div th:if="${param.success}">
+                <div class="alert alert-info">
+                    You've successfully added a new product!
+                </div>
+            </div>
+
+            <form align="center" th:action="@{/add-product}" th:object="${product}" method="post">
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('bandName')}? 'has-error':''">
+                    <label for="bandName" class="control-label">Band Name</label> <input
+                        id="bandName" class="form-control" th:field="*{bandName}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('bandName')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('albumName')}? 'has-error':''">
+                    <label for="albumName" class="control-label">Album Name</label> <input
+                        id="albumName" class="form-control" th:field="*{albumName}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('albumName')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+                <div class="form-group"
+                    th:classappend="${#fields.hasErrors('supportType')}? 'has-error':''">
+                    <label for="supportType" class="control-label">Support Type</label>
+                    <select class="form-control input-lg" name="supportType" autofocus="true" id="supportType" th:field="*{supportType}">
+                        <option th:each="opt:${T(onlinemusicshop.model.enums.SupportType).values()}" th:text="${opt.name()}" th:value="${opt}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('musicType')}? 'has-error':''">
+                    <label for="musicType" class="control-label">Music Type</label> <input
+                        id="musicType" class="form-control" th:field="*{musicType}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('musicType')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('price')}? 'has-error':''">
+                    <label for="price" class="control-label">Price</label> <input
+                        id="price" class="form-control" th:field="*{price}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('price')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('promoPrice')}? 'has-error':''">
+                    <label for="promoPrice" class="control-label">Promo Price</label> <input
+                        id="promoPrice" class="form-control" th:field="*{promoPrice}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('promoPrice')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+
+                <div class="form-group"
+                     th:classappend="${#fields.hasErrors('mainImageUrl')}? 'has-error':''">
+                    <label for="mainImageUrl" class="control-label">Main Image URL</label> <input
+                        id="mainImageUrl" class="form-control" th:field="*{mainImageUrl}"/>
+                    <p class="error-message"
+                       th:each="error : ${#fields.errors('mainImageUrl')}" th:text="${error}">Validation
+                        error</p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

@@ -31,7 +31,7 @@ public class SecurityConfiguration {
                         "/index",
                         "/home"
                 ).permitAll()
-                .requestMatchers("/admin-register")
+                .requestMatchers("/admin-register", "/add-product")
                 .hasAnyAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
