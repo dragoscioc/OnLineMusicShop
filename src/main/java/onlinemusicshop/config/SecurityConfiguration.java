@@ -23,13 +23,17 @@ public class SecurityConfiguration {
                         "/css/**",
                         "/img/**",
                         "/js/**",
+                        "/images/**",
                         "/vendor/**",
                         "/webjars/**",
                         "/*/webjars/**",
                         "/client-register/**",
                         "/",
                         "/index",
-                        "/home"
+                        "/home",
+                        "/shopping-cart-add/**",
+                        "/shopping-cart-remove/**",
+                        "/shopping-cart/**"
                 ).permitAll()
                 .requestMatchers("/admin-register", "/add-product")
                 .hasAnyAuthority("ADMIN")

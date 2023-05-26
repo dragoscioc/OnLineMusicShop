@@ -5,6 +5,8 @@ import onlinemusicshop.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
@@ -21,5 +23,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void create(Product product) {
         productRepository.save(product);
+    }
+
+    @Override
+    public Optional<Product> findById(int id) {
+        return productRepository.findById(id);
     }
 }

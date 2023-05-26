@@ -9,13 +9,13 @@ DONE OMS-7 Configure spring security
 DONE OMS-8 Add login/logout page
 DONE OMS-9 Add client register page (public)
 DONE OMS-10 Add admin register page (private only for admin role)
-OMS-11 Implement add product
+DONE OMS-11 Implement add product
 
 OMS-12 Implement view all products
 OMS-13 Implement edit user profile
 OMS-14 Implement delete product
 OMS-15 Implement edit product
 OMS-16 Implement view product
-OMS-17 Implement add to cart
-OMS-18 Implement view cart
-OMS-19 Implement send order
+DONE OMS-17 Implement add to cart
+DONE OMS-18 Implement view cart
+DONE OMS-19 Implement send order

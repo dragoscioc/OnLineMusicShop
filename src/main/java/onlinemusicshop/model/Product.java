@@ -3,6 +3,8 @@ package onlinemusicshop.model;
 import jakarta.persistence.*;
 import onlinemusicshop.model.enums.SupportType;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "product")
 
@@ -104,6 +106,19 @@ public class Product {
 
     public void setMainImageUrl(String mainImageUrl) {
         this.mainImageUrl = mainImageUrl;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
 
