@@ -24,7 +24,10 @@
                 </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" sec:authorize="hasAuthority('CLIENT')">
-                        <a class="nav-link" th:href="@{/orders}">My orders</a>
+                        <a class="nav-link" th:href="@{/my-orders}"><button type="submit" class="btn my-2 my-sm-0 btn-outline-light">My Orders</button></a>
+                    </li>
+                    <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                        <a class="nav-link" th:href="@{/all-orders}"><button type="submit" class="btn my-2 my-sm-0 btn-outline-light">All Orders</button></a>
                     </li>
                     <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
                         <a class="nav-link" th:href="@{/admin-register}">Create new admin</a>
@@ -39,7 +42,7 @@
                         <a class="nav-link" th:href="@{/login}">Login</a>
                     </li>
                     <li class="nav-item" sec:authorize="!isAuthenticated()">
-                        <a class="nav-link" th:href="@{/register}">Register</a>
+                        <a class="nav-link" th:href="@{/client-register}">Register</button></a>
                     </li>
                     <li class="nav-item" sec:authorize="isAuthenticated()">
                         <a class="nav-link" th:href="@{/profile}" th:text="${#authentication.principal.username}"></a>

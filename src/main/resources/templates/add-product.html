@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <form align="center" th:action="@{/add-product}" th:object="${product}" method="post">
+            <form align="left" th:action="@{/add-product}" th:object="${product}" method="post">
 
                 <div class="form-group"
                      th:classappend="${#fields.hasErrors('bandName')}? 'has-error':''">

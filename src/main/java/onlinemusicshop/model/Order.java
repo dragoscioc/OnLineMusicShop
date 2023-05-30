@@ -1,6 +1,9 @@
 package onlinemusicshop.model;
 
 import jakarta.persistence.*;
+import onlinemusicshop.model.enums.OrderStatus;
+import onlinemusicshop.model.enums.PaymentMethod;
+
 import java.util.Date;
 import java.util.List;
 
@@ -17,8 +20,16 @@ public class Order {
     private String orderNumber;
     @Column(name = "date_of_oder")
     private Date dateOfOrder;
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+
     @Column(name = "total_amount")
     private Double totalAmount;
+    @Column(name = "payment_method")
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
+
     @ManyToOne
     @JoinColumn(name="user_profile_id")
     private UserProfile userProfile;
@@ -29,12 +40,12 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderNumber, Date dateOfOrder, Double totalAmount) {
+    public Order(String orderNumber, Date dateOfOrder, OrderStatus status, Double totalAmount, PaymentMethod paymentMethod) {
         this.orderNumber = orderNumber;
         this.dateOfOrder = dateOfOrder;
-
+        this.status = status;
         this.totalAmount = totalAmount;
-
+        this.paymentMethod = paymentMethod;
     }
 
     public Integer getId() {
@@ -61,6 +72,14 @@ public class Order {
         this.dateOfOrder = dateOfOrder;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
     public Double getTotalAmount() {
         return totalAmount;
     }
@@ -69,12 +88,12 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
-    public List<ProductOrder> getProductOrders() {
-        return productOrders;
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setProductOrders(List<ProductOrder> productOrders) {
-        this.productOrders = productOrders;
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public UserProfile getUserProfile() {
@@ -85,14 +104,25 @@ public class Order {
         this.userProfile = userProfile;
     }
 
+    public List<ProductOrder> getProductOrders() {
+        return productOrders;
+    }
+
+    public void setProductOrders(List<ProductOrder> productOrders) {
+        this.productOrders = productOrders;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
                 "id=" + id +
                 ", orderNumber='" + orderNumber + '\'' +
                 ", dateOfOrder=" + dateOfOrder +
+                ", status=" + status +
                 ", totalAmount=" + totalAmount +
+                ", paymentMethod=" + paymentMethod +
+                ", userProfile=" + userProfile +
+                ", productOrders=" + productOrders +
                 '}';
     }
-
 }

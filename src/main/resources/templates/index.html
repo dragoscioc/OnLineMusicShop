@@ -27,7 +27,7 @@
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h3 class="fw-bolder" th:text="${product.getBandName()}">Sale Item</h3>
+                            <h5 class="fw-bolder" th:text="${product.getBandName()}">Sale Item</h5>
                             <h5 class="fw-bolder" th:text="${product.getAlbumName()}"></h5>
                             <!-- Product with promo price-->
                             <div th:if="${product.getPromoPrice()!=null}">

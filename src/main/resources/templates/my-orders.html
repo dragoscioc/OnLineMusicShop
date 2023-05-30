@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header-css"></head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<section class="h-100">
+    <div class="container py-5">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Date of Order</th>
+                <th scope="col">Status</th>
+                <th scope="col">Total Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order: ${orders}">
+                <th th:text="${order.getOrderNumber()}"></th>
+                <td th:text="${order.getDateOfOrder()}"></td>
+                <td th:text="${order.getStatus()}"></td>
+                <td th:text="${order.getTotalAmount()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>
