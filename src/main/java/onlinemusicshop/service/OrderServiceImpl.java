@@ -8,6 +8,7 @@ import onlinemusicshop.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -33,6 +34,25 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> findAll() {
         return orderRepository.findAll();
+    }
+
+    @Override
+    public Optional<Order> findByIdAndUserProfile(int id, UserProfile userProfile) {
+        return orderRepository.findByIdAndUserProfile(id, userProfile);
+    }
+    @Override
+    public Optional<Order> findById(int id) {
+        return orderRepository.findById(id);
+    }
+
+    @Override
+    public void delete(Order order) {
+        orderRepository.delete(order);
+    }
+
+    @Override
+    public void update(Order order) {
+        orderRepository.save(order);
     }
 
 }

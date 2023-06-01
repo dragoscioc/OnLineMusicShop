@@ -19,3 +19,4 @@ OMS-16 Implement view product
 DONE OMS-17 Implement add to cart
 DONE OMS-18 Implement view cart
 DONE OMS-19 Implement send order
+DONE OMS-20 Implement view all orders

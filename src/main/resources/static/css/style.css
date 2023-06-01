@@ -114,6 +114,7 @@ body {
     color: var(--bs-body-color);
     text-align: center;
     background-color: var(--bs-body-bg);
+    background:  #363636;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -681,7 +682,7 @@ progress {
     }
 }
 .row {
-    --bs-gutter-x: 1.5rem;
+    --bs-gutter-x: 4rem;
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
@@ -4634,7 +4635,7 @@ textarea.form-control-lg {
 
 .alert {
     --bs-alert-bg: transparent;
-    --bs-alert-padding-x: 1rem;
+    --bs-alert-padding-x: rem;
     --bs-alert-padding-y: 1rem;
     --bs-alert-margin-bottom: 1rem;
     --bs-alert-color: inherit;

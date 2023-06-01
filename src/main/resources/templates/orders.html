@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
 
 <head th:replace="fragments/header :: header-css"></head>
@@ -8,7 +9,7 @@
 <div th:replace="fragments/header :: header"></div>
 <section class="h-100">
     <div class="container py-5">
-        <table class="table">
+        <table class="table align-content-center text-white" >
             <thead>
             <tr>
                 <th scope="col">Order Number</th>
@@ -26,10 +27,16 @@
                 <td th:text="${order.getTotalAmount()}"></td>
                 <td>
                     <div sec:authorize="hasAuthority('ADMIN')">
-                        <a th:href="'/order/delete/'+ ${order.getId()}">Delete</a>
+                        <a th:href="'/admin-order-delete/'+ ${order.getId()}">Delete</a>
                     </div>
-                    <div>
-                        <a th:href="'/order/view/'+ ${order.getId()}">View</a>
+                    <div sec:authorize="hasAuthority('ADMIN')">
+                        <a th:href="'/admin-order-view/'+ ${order.getId()}">View</a>
+                    </div>
+                    <div sec:authorize="hasAuthority('ADMIN')">
+                        <a th:href="'/admin-order-update/' + ${order.getId()}">Update</a>
+                    </div>
+                    <div sec:authorize="hasAuthority('CLIENT')">
+                        <a th:href="'/client-order-view/'+ ${order.getId()}">View</a>
                     </div>
                 </td>
             </tr>

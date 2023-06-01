@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
 <head th:replace="fragments/header :: header-css"></head>
 
@@ -7,7 +8,7 @@
 <div th:replace="fragments/header :: header"></div>
 <section class="h-100">
     <div class="container py-5">
-        <table class="table">
+        <table class="table align-content-center text-white" >
             <thead>
             <tr>
                 <th scope="col">Order Number</th>
